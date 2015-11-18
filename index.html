@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>High resolution air pollutant simulation for the Metropolitan Region of Porto Alegre</title>
+  <meta charset="utf-8">
+  <meta name="description" content="High resolution air pollutant simulation for the Metropolitan Region of Porto Alegre">
+  <meta name="author" content="Sergio Ibarra, Angel Vara, Amanda Rehbein, Rita Ynoue">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/header.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>High resolution air pollutant simulation for the Metropolitan Region of Porto Alegre</h1>
+    <h2></h2>
+    <p>Sergio Ibarra, Angel Vara, Amanda Rehbein, Rita Ynoue<br/>Institute of Astronomy, Geophysics and Atmospheric Sciences, University of São Paulo</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/esquema.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Vehicular emissions of MR POA</h3>
+
+<ol>
+<li>Teixeira (et al, 2008):  195,740 (tCO/y) in 2004</li>
+<li>Ribeiro (et al, 2008):   160,015 (tCO/y) in 2004</li>
+<li>Cuchiara (et al, 2009):  144,883 (tCO/y) in 2009</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Metropolitan Region of POA</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/regions.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Sources of emissions inventories</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/sources.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Objectives</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>To develop a bottom-up (by street,hour and day) vehicular emissions inventory for MR POA</li>
+<li>Model emissions with WRF Chem</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Material and methods</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Road network from Open Street Map</li>
+<li>remIAG_0.3.3</li>
+<li>WRF Chem 3.6</li>
+<li>NCEP FNL. 2012/6/6-2012/6/9</li>
+<li>R 3.2.2 ggplot2, ggmap, maptools, ncdf,rgeos</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Rede OSM</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='550' src='assets/img/rede.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Method remIAG</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/method.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Model setup</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>2012-06-06 00:00 2012-06-09 00:00</li>
+<li>e_we =  60 * e_sn =  61</li>
+<li>ΔX = ΔY = 1000m</li>
+<li>12 file emissions for monday
+<div style='text-align: center;'>
+<img height='300' src='assets/img/para.png' />
+</div></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Synoptic conditions</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='600' src='assets/img/sino.gif' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Vehicle distributions</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/dveh.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Emissions</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/emi.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Emissions</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/emi2.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Emissions</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/emi3.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Emissions</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/emi3.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Temperature and Wind</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/temp.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Concentrations</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='600' src='assets/img/cod2v3.gif' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Concentrations</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='600' src='assets/img/cod3v3.gif' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Concentrations</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='450' src='assets/img/conpoa.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Discussion</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='120' src='assets/img/compa.png' />
+</div>
+
+<h3>Emissions looks smaller. Possible reasons:</h3>
+
+<ol>
+<li>Technological improvements (PROCONVE)</li>
+<li>Different methods, DF, EF, etc</li>
+<li>Average age of fleet and lack of traffic counts.</li>
+<li>Higher number of motorcycles is an example of difficulty of this approach</li>
+</ol>
+
+<h3>Air pollution simulation</h3>
+
+<ol>
+<li>Simulation 1x1 degree to 1x1 km give plausible results, but it needs nesting</li>
+<li>Difficulty to get air pollution data</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Application in Santiago</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/santiago.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Application in Sao Paulo</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='assets/img/sp.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>remIAG gives plausivel results but need to be adapted to every city with available data, adjusting equation. </li>
+<li>Emissions of POA follow an average city pattern.</li>
+<li>Results and model available in 2016 1x1 km.</li>
+<li>Southamerican results in raster and remIAG will be available in 2016.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Cuchiara G., Rodrigues B., Costa-Carvalho J.  Modelagem da poluição fotoquímica na região metropolitana de porto alegre.  IV Encuentro Sul Meteorologia. </li>
+<li>Teixeira E., Feltes S., Ramos de Santana E.  2008. Estudo das emissões de fontes móveis na região metropolitana de porto alegre, rio grande do sul. Quim. Nova, Vol. 31, No. 2, 244-248, 2008</li>
+<li>Ribeiro L., Arapujo P., Ramos de Santana E. e Costa-Carvalho J.  Estudo das emissões veiculares na região metropolitana de porto alegre. IV Jornada de Iniciação Científica - Meio Ambiente.<br></li>
+<li>Ibarra S., Vara A., Ynoue R. 2015. Vehicular bottom-up emissions inventory and atmospheric simulation for 58 urban centers of South America. International conference on southern hemisphere meteorology and oceanography. Santiago, Chile, October  5-9.</li>
+<li>Boletim Sinotico CPETEC. <a href="http://tempo.cptec.inpe.br/bol_tecnico.shtml">http://tempo.cptec.inpe.br/bol_tecnico.shtml</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="slide-25" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Motivation'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Motivation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Metropolitan Region of POA'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Sources of emissions inventories'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Objectives'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Material and methods'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Rede OSM'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Method remIAG'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Model setup'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Synoptic conditions'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Vehicle distributions'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Emissions'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Emissions'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Emissions'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Emissions'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Temperature and Wind'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Concentrations'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Concentrations'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Concentrations'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Discussion'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Application in Santiago'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Application in Sao Paulo'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Conclusions'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='References'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='NA'>
+         25
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
